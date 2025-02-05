@@ -1,11 +1,15 @@
+import os
 from facebook_business.api import FacebookAdsApi
+from dotenv import load_dotenv
+
+load_dotenv()
 from facebook_business.adobjects.page import Page
 
 # Replace these with your own credentials
-my_app_id = '1500993981288343'
-my_app_secret = '70e019734741ac53a69fa0a497bed38c'
-my_access_token = 'EAAVVJWUQj5cBO6Y7ZAZCdetZBIHBf4hf9VeLeOGJOof3rkRip2fJZBIHKOSDKxRzzsPAVZBIpGQDWkZBudTqXLwIMXn05wWTMpmOMI49HZAJAYYUEDdGDcwZCm7blYaqMhLSU4UO9HJwivpc01yyWOOFKMIOZBKjsLKOC5DoHwZCddI9OYVd8cm2UiLZCd8FpPBDXlb1LXJH0smwlJLmgZAXZAxUXnpHXGKUZD'
-page_id = "317276771466166"
+my_app_id = os.getenv('APP_ID')
+my_app_secret = os.getenv('APP_SECRET')
+my_access_token = os.getenv('ACCESS_TOKEN')
+page_id = os.getenv('PAGE_ID')
 
 # Initialize the SDK (this “logs in” your application)
 FacebookAdsApi.init(my_app_id, my_app_secret, my_access_token)
